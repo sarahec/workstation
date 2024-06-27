@@ -16,7 +16,14 @@
         "bundle": false,
         "main": "apps/workstation/src/main.ts",
         "tsConfig": "apps/workstation/tsconfig.app.json",
-        "assets": ["apps/workstation/src/assets"],
+        "assets": [
+          "apps/workstation/",
+          {
+            "input": "./apps/workstation/src/assets/public",
+            "glob": "**/*.html",
+            "output": "./apps/workstation/public"
+          }
+      ],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
