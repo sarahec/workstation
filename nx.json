@@ -35,5 +35,6 @@
       },
       "exclude": ["apps/workstation-e2e/**/*"]
     }
-  ]
+  ],
+  "nxCloudAccessToken": "ODFkMTMzNTEtY2JhOC00MjgzLTgyMWQtODYxMGZiYjc2MzkxfHJlYWQtd3JpdGU="
 }
