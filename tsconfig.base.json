@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@workstation/services": ["libs/services/src/index.ts"]
+      "@workstation/services": ["libs/services/src/index.ts"],
+      "@workstation/workflow": ["libs/workflow/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
