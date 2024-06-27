@@ -1,0 +1,56 @@
+{
+  "name": "workstation",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/workstation/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/workstation",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/workstation/src/main.ts",
+        "tsConfig": "apps/workstation/tsconfig.app.json",
+        "assets": ["apps/workstation/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "workstation:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "workstation:build:development"
+        },
+        "production": {
+          "buildTarget": "workstation:build:production"
+        }
+      }
+    }
+  }
+}
