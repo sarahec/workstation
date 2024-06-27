@@ -1,5 +1,5 @@
 {
-  description = "Description for the project";
+  description = "Development environment for the ID Workstation";
 
   inputs = {
     devenv-root = {
